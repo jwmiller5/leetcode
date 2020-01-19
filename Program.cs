@@ -8,21 +8,16 @@ namespace leetcode
         {
             Console.WriteLine("Hello World!");
             var s = new Solution();
-            string testcase = "III";
-            string t2 = "IV";
-            string t3 = "IX";
-            string t4 = "XCIX";
-            string t5 = "XLV";
-            string t6 = "MCMXCIX";
-            string t7 = "MCMLXXXIII";
-            var result = s.RomanToInt(testcase);
-            Console.WriteLine($"{testcase} - {result}");
-            Console.WriteLine($"{t2} - {s.RomanToInt(t2)}");
-            Console.WriteLine($"{t3} - {s.RomanToInt(t3)}");   
-            Console.WriteLine($"{t4} - {s.RomanToInt(t4)}");   
-            Console.WriteLine($"{t5} - {s.RomanToInt(t5)}");   
-            Console.WriteLine($"{t6} - {s.RomanToInt(t6)}");   
-            Console.WriteLine($"{t7} - {s.RomanToInt(t7)}");   
+            ListNode t1 = new ListNode(2) { next = new ListNode(4) { next = new ListNode(3) { next = new ListNode(1)}}};
+            ListNode t2 = new ListNode(5) { next = new ListNode(6) { next = new ListNode(4)}};
+            var result = s.AddTwoNumbers(t1, t2);
+            Console.Write("{");
+            while (result?.val != null)
+            {
+                Console.Write($"{result.val} ");
+                result = result.next;
+            }
+            Console.Write("}");   
 
         }
     }
