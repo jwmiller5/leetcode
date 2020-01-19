@@ -8,16 +8,12 @@ namespace leetcode
         {
             Console.WriteLine("Hello World!");
             var s = new Solution();
-            ListNode t1 = new ListNode(2) { next = new ListNode(4) { next = new ListNode(3) { next = new ListNode(1)}}};
-            ListNode t2 = new ListNode(5) { next = new ListNode(6) { next = new ListNode(4)}};
-            var result = s.AddTwoNumbers(t1, t2);
-            Console.Write("{");
-            while (result?.val != null)
+            string[] s1 = new string[] {"abcabcbb", "bbbbb", "pwwkew"};
+
+            foreach (string stest in s1)
             {
-                Console.Write($"{result.val} ");
-                result = result.next;
+                Console.WriteLine($"{stest} has the longest substring {s.LengthOfLongestSubstring(stest)}"); 
             }
-            Console.Write("}");   
 
         }
     }
