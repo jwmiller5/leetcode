@@ -8,12 +8,11 @@ namespace leetcode
         {
             Console.WriteLine("Hello World!");
             var s = new Solution();
-            string[] s1 = new string[] {"abcabcbb", "bbbbb", "pwwkew"};
+            int[] i1 = new int[] { 1, 2 };
+            int[] i2 = new int[] { 3, 4 };
 
-            foreach (string stest in s1)
-            {
-                Console.WriteLine($"{stest} has the longest substring {s.LengthOfLongestSubstring(stest)}"); 
-            }
+            Console.WriteLine($"{s.FindMedianSortedArrays(i1, i2)}"); 
+            
 
         }
     }
