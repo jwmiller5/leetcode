@@ -5,16 +5,22 @@ namespace leetcode {
 
     public partial class Solution {
         public string Convert(string s, int numRows) {
+            if (numRows == 1)
+                return s;
+                
             string[] rows = new string[numRows];
-            int letters = 0;
-            int i = 0;
-            while (letters < s.Length)
+            int rowNum = 0;
+            int direction = -1;
+            for (int i = 0; i < s.Length; i++)
             {
-                int rownum = i % (numRows);
-                int columnnum = i / numRows;
-                if (shouldWrite(rownum, columnnum, numRows))
-                    rows[rownum] += s.Substring(letters++, 1);
-                i++;
+                rows[rowNum] += s.Substring(i, 1);
+ 
+                if (rowNum == (numRows - 1) || rowNum == 0)
+                {
+                    direction = direction * -1;
+                }
+
+                rowNum += direction;
             }
 
             var builder = new StringBuilder(s.Length);
@@ -24,17 +30,6 @@ namespace leetcode {
             }
             
             return builder.ToString();
-        }
-
-        private bool shouldWrite(int rownum, int columnnum, int totalRows)
-        {
-            if (totalRows < 3)
-                return true;
-            
-            if (columnnum % (totalRows - 1) == 0)            
-                return true;                
-
-            return (rownum == (totalRows - 1 - (columnnum % (totalRows - 1))));
         }
     }
 }
