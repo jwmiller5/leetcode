@@ -14,7 +14,7 @@ namespace leetcode
             list1.next.next.next.next = new ListNode(5);
             list1.next.next.next.next.next = new ListNode(6);
 
-            var remove = s.RemoveNthFromEnd(list1, 2);
+            var remove = s.RemoveNthFromEnd(list1, 5);
 
             do
             {
