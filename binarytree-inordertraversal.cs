@@ -15,24 +15,24 @@
          /// Left, then root, then right
         public IList<int> InorderTraversal(TreeNode root) {
             List<int> inorder = new List<int>();            
-            return ProcessNode(root, inorder);
+            return ProcessNodeInOrder(root, inorder);
         }
 
-        public List<int> ProcessNode(TreeNode current, List<int> prev)
+        public List<int> ProcessNodeInOrder(TreeNode current, List<int> prev)
         {
             if (current == null)
                 return prev;
 
             if (current.left != null)
             {
-                ProcessNode(current.left, prev);
+                ProcessNodeInOrder(current.left, prev);
             }
 
             prev.Add(current.val);
 
             if (current.right != null)
             {
-                ProcessNode(current.right, prev);
+                ProcessNodeInOrder(current.right, prev);
             }
 
             return prev;
